@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>רב לוח - לוח שנה עברי-לועזי לחלונות</title>
+<meta name="description" content="רב לוח - לוח שנה עברי ולועזי למחשב: חגים, זמני היום, ימי הולדת ויאהרצייט, והדפסת לוחות שנה מעוצבים. חינם.">
+<link rel="icon" type="image/png" href="images/favicon-64.png">
+<style>
+  :root {
+    --bg: #faf8fc; --surface: #ffffff; --fg: #1d1b20; --muted: #5f5a66; --line: #e6e0ec;
+    --accent: #7b2ca0; --accent-strong: #5e1b7d; --accent-soft: #f3e9f8; --on-accent: #ffffff;
+    --note-bg: #fff8e5; --note-line: #e8c25a;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #17151a; --surface: #211e25; --fg: #ece8f0; --muted: #aaa3b3; --line: #35303b;
+      --accent: #c48be0; --accent-strong: #d9aeee; --accent-soft: #2c2433; --on-accent: #1d1b20;
+      --note-bg: #2b2616; --note-line: #8a7433;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 17px/1.65 "Segoe UI", Tahoma, Arial, sans-serif; }
+  a { color: var(--accent); }
+  img { max-width: 100%; height: auto; display: block; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+
+  /* top bar */
+  header.top { position: sticky; top: 0; z-index: 5; background: color-mix(in srgb, var(--bg) 88%, transparent);
+               backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  header.top .wrap { display: flex; align-items: center; gap: 12px; height: 56px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 19px; color: var(--fg); text-decoration: none; }
+  .brand img { width: 30px; height: 30px; }
+  nav.links { margin-inline-start: auto; display: flex; gap: 18px; flex-wrap: wrap; }
+  nav.links a { color: var(--muted); text-decoration: none; font-size: 15px; }
+  nav.links a:hover { color: var(--accent); }
+  @media (max-width: 640px) { nav.links { display: none; } }
+
+  /* hero */
+  .hero { padding: 56px 0 40px; }
+  .hero .wrap { display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px; align-items: center; }
+  @media (max-width: 820px) { .hero .wrap { grid-template-columns: 1fr; } }
+  .hero-title { display: flex; align-items: center; gap: 18px; margin-bottom: 14px; }
+  .hero-title img { width: 84px; height: 84px; }
+  h1 { font-size: 46px; line-height: 1.1; margin: 0; }
+  .tagline { font-size: 21px; color: var(--muted); margin: 0 0 26px; }
+  .cta { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .btn { display: inline-flex; align-items: center; gap: 10px; padding: 13px 26px; border-radius: 10px; font-weight: 600;
+         text-decoration: none; font-size: 18px; }
+  .btn-primary { background: var(--accent); color: var(--on-accent); box-shadow: 0 6px 18px color-mix(in srgb, var(--accent) 30%, transparent); }
+  .btn-primary:hover { background: var(--accent-strong); }
+  .btn-ghost { color: var(--accent); border: 1px solid var(--line); background: var(--surface); }
+  .meta { margin-top: 14px; color: var(--muted); font-size: 15px; }
+  .shot-main { justify-self: center; border-radius: 10px; box-shadow: 0 18px 50px rgba(40, 10, 60, .22); border: 1px solid var(--line); }
+
+  /* sections */
+  section { padding: 44px 0; }
+  section.alt { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  h2 { font-size: 30px; margin: 0 0 8px; }
+  .lead { color: var(--muted); margin: 0 0 28px; }
+
+  .features { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(290px, 100%), 1fr)); gap: 18px; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 20px 22px; }
+  section.alt .card { background: var(--bg); }
+  .card h3 { margin: 0 0 6px; font-size: 19px; display: flex; align-items: center; gap: 10px; }
+  .card h3 .ic { width: 34px; height: 34px; border-radius: 9px; background: var(--accent-soft); color: var(--accent);
+                 display: inline-grid; place-items: center; flex: none; }
+  .card h3 svg { width: 20px; height: 20px; }
+  .card p { margin: 0; color: var(--muted); font-size: 16px; }
+
+  .export { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; }
+  @media (max-width: 820px) { .export { grid-template-columns: 1fr; } }
+  .export img { border-radius: 8px; border: 1px solid var(--line); box-shadow: 0 10px 30px rgba(0, 0, 0, .12); background: #fff; }
+  ul.checks { list-style: none; padding: 0; margin: 0; }
+  ul.checks li { padding-inline-start: 28px; position: relative; margin: 8px 0; }
+  ul.checks li::before { content: ""; position: absolute; inset-inline-start: 4px; top: .55em; width: 12px; height: 7px;
+                         border: solid var(--accent); border-width: 0 0 2.5px 2.5px; transform: rotate(-45deg); }
+
+  .steps { counter-reset: s; list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+  .steps li { counter-increment: s; position: relative; padding-inline-start: 50px; min-height: 36px; }
+  .steps li::before { content: counter(s); position: absolute; inset-inline-start: 0; top: 0; width: 34px; height: 34px;
+                      border-radius: 50%; background: var(--accent); color: var(--on-accent); display: grid; place-items: center; font-weight: 700; }
+  .note { background: var(--note-bg); border-inline-start: 4px solid var(--note-line); border-radius: 8px; padding: 12px 16px; margin: 20px 0 0; }
+  kbd { font-family: inherit; background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: 0 5px; }
+
+  details { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 18px; margin: 10px 0; }
+  details summary { cursor: pointer; font-weight: 600; }
+  details p { margin: 10px 0 2px; color: var(--muted); }
+
+  footer { padding: 30px 0 40px; color: var(--muted); font-size: 14px; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
+  .ltr { direction: ltr; unicode-bidi: isolate; }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#"><img src="images/favicon-64.png" alt="">רב לוח</a>
+    <nav class="links">
+      <a href="#features">תכונות</a>
+      <a href="#export">יצוא והדפסה</a>
+      <a href="#new">מה חדש</a>
+      <a href="#install">התקנה</a>
+      <a href="#faq">שאלות</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <div class="hero-title">
+        <img src="images/icon-256.png" alt="סמל רב לוח">
+        <h1>רב לוח</h1>
+      </div>
+      <p class="tagline">לוח שנה עברי ולועזי למחשב - חגים, זמני היום, ימי הולדת ויאהרצייט, והדפסת לוחות שנה מעוצבים.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="https://github.com/elischein/RavLuach/releases/latest/download/RavLuach-Setup.exe">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+          הורדה חינם
+        </a>
+        <a class="btn btn-ghost" href="#new">מה חדש בגרסה 2.0</a>
+      </div>
+      <p class="meta">גרסה 2.0.0 · <span class="ltr">Windows 10 / 11</span> (64 ביט) · <a href="https://github.com/elischein/RavLuach/releases">כל הגרסאות</a></p>
+    </div>
+    <img class="shot-main" src="images/main-window.png" width="282" height="442" alt="החלון הראשי של רב לוח - חודש תשרי">
+  </div>
+</div>
+
+<section id="features" class="alt">
+  <div class="wrap">
+    <h2>מה יש ברב לוח</h2>
+    <p class="lead">חלון קטן ופשוט, שמאחוריו חישוב מדויק של הלוח העברי.</p>
+    <div class="features">
+      <div class="card">
+        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span>לוח עברי ולועזי</h3>
+        <p>מעבר בין הלוחות בלחיצה, ניווט נוח במקלדת ובעכבר, ו"בעוד X ימים" לכל תאריך. אפשר לקבוע שהיום יתחלף בצאת הכוכבים.</p>
+      </div>
+      <div class="card">
+        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 15 8l7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg></span>חגים ופרשת השבוע</h3>
+        <p>לארץ ישראל או לחוץ לארץ (יום טוב שני של גלויות), כולל חגי מדינת ישראל למי שרוצה.</p>
+      </div>
+      <div class="card">
+        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>ימי הולדת ויאהרצייט</h3>
+        <p>ארועים חוזרים לפי תאריך עברי או לועזי, עם מספר השנים. ל' חשוון/כסלו ואדר נקבעים לפי ההלכה, ומנהג אדר ליאהרצייט לבחירה.</p>
+      </div>
+      <div class="card">
+        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></span>זמני היום</h3>
+        <p>רשימה מורחבת לפי ספריית KosherJava, ובה הנץ והשקיעה הנראים על בסיס לוחות "חי". מיקום נקבע בחיפוש כתובת.</p>
+      </div>
+      <div class="card">
+        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V3h12v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M6 14h12v7H6z"/></svg></span>לוחות להדפסה</h3>
+        <p>לוח חודשי, לוח לכל חודשי השנה או לוח שנתי על דף A4 - עם טקסט, צבע ותמונה בימים שתבחרו.</p>
+      </div>
+      <div class="card">
+        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg></span>ביומן ובטלפון</h3>
+        <p>יצוא הארועים לקובץ יומן, לגוגל, לאאוטלוק ולטלפון - כל יום הולדת עברי בתאריך הלועזי הנכון בכל שנה.</p>
+      </div>
+      <div class="card">
+        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z"/></svg></span>מידע נוסף ליום</h3>
+        <p>דף יומי, ספירת העומר ותזכורת ל"משיב הרוח" ולשאילת גשמים; קביעות השנה, מולדות ותקופות.</p>
+      </div>
+      <div class="card">
+        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></span>מראה עדכני</h3>
+        <p>מצב כהה לפי הגדרות Windows, ותצוגה חדה גם במסכים בהגדלה.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="export">
+  <div class="wrap export">
+    <div>
+      <h2>לוח שנה מעוצב, מוכן להדפסה</h2>
+      <p class="lead">הלוח נפתח בדפדפן, מסודר על דפי A4 בדיוק כפי שיודפס.</p>
+      <ul class="checks">
+        <li>גופן, גודל (חודש, 2 או 6 חודשים בעמוד) ופריסה לרוחב או לאורך</li>
+        <li>בכל יום: תאריך חלופי, פרשת השבוע וארועים אישיים</li>
+        <li>לחיצה על יום - טקסט, צבע רקע ותמונה, עם הגדלה וגרירה</li>
+        <li>הדפסה או שמירה כ-PDF, ושמירת הדף להמשך עריכה</li>
+        <li>גם זמני החודש - לדף מודפס או לאקסל</li>
+      </ul>
+    </div>
+    <img src="images/export-month.png" width="900" height="622" alt="לוח חודש תשרי שיוצא להדפסה" loading="lazy">
+  </div>
+</section>
+
+<section id="new" class="alt">
+  <div class="wrap">
+    <h2>מה חדש בגרסה 2.0</h2>
+    <p class="lead">התוכנה נכתבה מחדש. למי שהכיר את הגרסה הקודמת:</p>
+    <div class="features">
+      <div class="card"><h3>זמני היום</h3><p>חישוב חדש ומדויק יותר, בחירת הזמנים המוצגים, הנץ הנראה, ויצוא זמני החודש.</p></div>
+      <div class="card"><h3>מיקומים</h3><p>חיפוש מיקום לפי כתובת, עם מילוי אוטומטי של גובה ואזור זמן.</p></div>
+      <div class="card"><h3>ארועים</h3><p>חיפוש, סינון ומיון, "המועד הבא", וכללים הלכתיים מדויקים לתאריכים שאינם קיימים בכל שנה.</p></div>
+      <div class="card"><h3>יצוא לוח</h3><p>לדף להדפסה במקום לוורד - עם עריכה, תמונות ושמירה כ-PDF, בלי צורך ב-Word.</p></div>
+      <div class="card"><h3>יומן</h3><p>במקום החיבור לאאוטלוק: "הוסף ליומן" ויצוא הארועים לכל יומן, גם בטלפון.</p></div>
+      <div class="card"><h3>ועוד</h3><p>דף יומי, ספירת העומר ותזכורות טל ומטר. תקופות. תמיכה במסכים מודרניים ובמצב כהה.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="install">
+  <div class="wrap">
+    <h2>התקנה</h2>
+    <ol class="steps">
+      <li><b>מורידים</b> את קובץ ההתקנה (הכפתור למעלה) ומפעילים אותו.</li>
+      <li>אם מופיעה ההודעה "<span class="ltr">Windows</span> הגן על המחשב" - לוחצים <b>מידע נוסף</b> ואז <b>הפעל בכל זאת</b>.
+          (זו אזהרה רגילה לתוכנה שאינה חתומה דיגיטלית.)</li>
+      <li>התוכנה צריכה את <b class="ltr">.NET 8 Desktop Runtime</b> של מיקרוסופט. אם הוא חסר, ההתקנה תציע קישור להורדתו מאתר מיקרוסופט -
+          מתקינים אותו ומפעילים שוב את ההתקנה.</li>
+      <li>זהו. <b>ארועים מהגרסה הקודמת</b> מיובאים אוטומטית בהפעלה הראשונה.</li>
+    </ol>
+    <div class="note"><b>לתשומת לב:</b> זמני היום מחושבים בקירוב, ואין לסמוך עליהם בצמצום. פירוט בעזרת התוכנה (<kbd>F1</kbd>).</div>
+  </div>
+</section>
+
+<section id="faq" class="alt">
+  <div class="wrap">
+    <h2>שאלות</h2>
+    <details>
+      <summary>האם התוכנה בתשלום?</summary>
+      <p>לא. רב לוח מופץ חינם.</p>
+    </details>
+    <details>
+      <summary>היא עובדת על Windows 7 או על מחשב 32 ביט?</summary>
+      <p>לא. הגרסה החדשה דורשת Windows 10 או 11 במחשב 64 ביט.</p>
+    </details>
+    <details>
+      <summary>הנץ והשקיעה הנראים - לכל מקום?</summary>
+      <p>לירושלים הנתונים כלולים בתוכנה. למיקומים אחרים מורידים אותם מלוחות "חי" בחלון המיקומים (דורש חיבור לאינטרנט).</p>
+    </details>
+    <details>
+      <summary>איך מעדכנים לגרסה חדשה?</summary>
+      <p>מורידים ומתקינים מעל הקיימת. הארועים, המיקומים וההגדרות נשמרים.</p>
+    </details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>רב לוח <span class="ltr">© 2006–2026</span> · <a href="mailto:elischein@gmail.com">elischein@gmail.com</a></span>
+    <span>זמני היום: KosherJava Zmanim · הנץ הנראה: לוחות "חי" · מפות: OpenStreetMap · גובה: Open-Meteo</span>
+  </div>
+</footer>
+
+</body>
+</html>
