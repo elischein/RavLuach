@@ -25,6 +25,9 @@
 
 המאגר כולל את אתר התוכנה (בתיקייה `docs`) ואת קבצי ההתקנה (ב-Releases). לשאלות והערות: elischein@gmail.com
 
+### קוד מקור של ספריית הזמנים
+זמני היום מחושבים בספריית Zmanim.NET - המרה ל-C# של [KosherJava Zmanim](https://github.com/KosherJava/zmanim), ברישיון LGPL 2.1. קוד המקור המלא של ההמרה מצורף לכל גרסה, לצד קובץ ההתקנה: **[Zmanim.NET-source.zip](https://github.com/elischein/RavLuach/releases/latest/download/Zmanim.NET-source.zip)**.
+
 </div>
 
 ---
@@ -49,3 +52,6 @@ Download **RavLuach-Setup.exe** and run it. Requires Windows 10 or 11 (64-bit) a
 > Halachic times are approximate - do not rely on them to the minute.
 
 This repository holds the program's website (in `docs`) and its installers (in Releases). Questions and feedback: elischein@gmail.com
+
+### Source code of the zmanim library
+Halachic times are calculated by Zmanim.NET - a C# port of [KosherJava Zmanim](https://github.com/KosherJava/zmanim), licensed under LGPL 2.1. The complete source code of the port is attached to every release, next to the installer: **[Zmanim.NET-source.zip](https://github.com/elischein/RavLuach/releases/latest/download/Zmanim.NET-source.zip)**.
