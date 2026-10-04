@@ -4,7 +4,7 @@
 
 # רב לוח
 
-לוח שנה עברי ולועזי למחשב - חגים, זמני היום, ימי הולדת ויאהרצייט, והדפסת לוחות שנה מעוצבים. **חינם.**
+לוח שנה עברי ולועזי למחשב - חגים, זמני היום, ימי הולדת ויאהרצייט, והדפסת לוחות שנה מעוצבים. **חינם לשימוש אישי.**
 
 **[לאתר רב לוח](https://elischein.github.io/RavLuach/)** · **[הורדה](https://github.com/elischein/RavLuach/releases/latest/download/RavLuach-Setup.exe)** · [כל הגרסאות](https://github.com/elischein/RavLuach/releases)
 
@@ -23,6 +23,9 @@
 
 > זמני היום מחושבים בקירוב - אין לסמוך עליהם בצמצום.
 
+### רישיון
+רב לוח חינם **לשימוש אישי בלבד**. אין לעשות בו שימוש מסחרי, כגון הדפסת לוחות שנה או לוחות זמנים למכירה, לחלוקה ללקוחות או לפרסום, בלי אישור מראש. לבקשת רישיון מסחרי: elischein@gmail.com. התנאים המלאים מוצגים בהתקנה.
+
 המאגר כולל את אתר התוכנה (בתיקייה `docs`) ואת קבצי ההתקנה (ב-Releases). לשאלות והערות: elischein@gmail.com
 
 ### קוד מקור של ספריית הזמנים
@@ -34,7 +37,7 @@
 
 # RavLuach
 
-A Hebrew/Gregorian calendar for Windows - Jewish holidays, halachic times, birthdays and yahrzeits, and printable calendars. **Free.** (Hebrew user interface.)
+A Hebrew/Gregorian calendar for Windows - Jewish holidays, halachic times, birthdays and yahrzeits, and printable calendars. **Free for personal use.** (Hebrew user interface.)
 
 **[Website](https://elischein.github.io/RavLuach/)** · **[Download](https://github.com/elischein/RavLuach/releases/latest/download/RavLuach-Setup.exe)** · [All releases](https://github.com/elischein/RavLuach/releases)
 
@@ -50,6 +53,9 @@ A Hebrew/Gregorian calendar for Windows - Jewish holidays, halachic times, birth
 Download **RavLuach-Setup.exe** and run it. Requires Windows 10 or 11 (64-bit) and the .NET 8 Desktop Runtime - if it is missing, the installer offers a link to download it.
 
 > Halachic times are approximate - do not rely on them to the minute.
+
+### License
+RavLuach is free for **personal use only**. Commercial use - such as printing calendars or zmanim tables for sale, for customers or for advertising - is not permitted without prior permission. For a commercial license: elischein@gmail.com. The full terms are shown during setup.
 
 This repository holds the program's website (in `docs`) and its installers (in Releases). Questions and feedback: elischein@gmail.com
 
