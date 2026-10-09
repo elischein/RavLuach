@@ -1,12 +1,64 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-<meta name="google-site-verification" content="eCNmN7E9VgzF-qql3reXkqtICJlL09nEtZA2upCnS24" />
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>רב לוח - לוח שנה עברי-לועזי לחלונות</title>
-<meta name="description" content="רב לוח - לוח שנה עברי ולועזי למחשב: חגים, זמני היום, ימי הולדת ויאהרצייט, והדפסת לוחות שנה מעוצבים. חינם לשימוש אישי.">
+<title>רב לוח (RavLuach) - תוכנת לוח שנה עברי ולועזי למחשב, חינם</title>
+<meta name="description" content="רב לוח - תוכנת לוח שנה עברי ולועזי ל-Windows: חגים ופרשת השבוע, זמני היום, ימי הולדת ויאהרצייט, תזכורות, והדפסת לוחות שנה מעוצבים. הורדה חינם לשימוש אישי.">
+<meta name="application-name" content="רב לוח">
+<meta name="google-site-verification" content="eCNmN7E9VgzF-qql3reXkqtICJlL09nEtZA2upCnS24">
+<link rel="canonical" href="https://elischein.github.io/RavLuach/">
 <link rel="icon" type="image/png" href="images/favicon-64.png">
+<link rel="apple-touch-icon" href="images/icon-256.png">
+
+<!-- תצוגה בשיתוף (וואטסאפ, פייסבוק וכו') -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="רב לוח">
+<meta property="og:locale" content="he_IL">
+<meta property="og:url" content="https://elischein.github.io/RavLuach/">
+<meta property="og:title" content="רב לוח - תוכנת לוח שנה עברי ולועזי למחשב">
+<meta property="og:description" content="חגים, זמני היום, ימי הולדת ויאהרצייט, תזכורות והדפסת לוחות שנה מעוצבים. חינם לשימוש אישי.">
+<meta property="og:image" content="https://elischein.github.io/RavLuach/images/export-month.png">
+<meta property="og:image:alt" content="לוח חודש תשרי שיוצא מרב לוח להדפסה">
+<meta name="twitter:card" content="summary_large_image">
+
+<!--
+  נתונים מובנים לגוגל: שם האתר "רב לוח" (ושמות חלופיים - כך גוגל מזהה ומציג אותו גם בחיפוש בעברית),
+  והתוכנה עצמה. בעדכון גרסה - לעדכן softwareVersion.
+-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://elischein.github.io/RavLuach/#website",
+      "url": "https://elischein.github.io/RavLuach/",
+      "name": "רב לוח",
+      "alternateName": ["RavLuach", "Rav Luach", "רב-לוח", "רבלוח"],
+      "inLanguage": "he"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "רב לוח",
+      "alternateName": ["RavLuach", "Rav Luach", "רב-לוח"],
+      "description": "תוכנת לוח שנה עברי ולועזי למחשב: חגים ופרשת השבוע, זמני היום, ימי הולדת ויאהרצייט, תזכורות, והדפסת לוחות שנה מעוצבים.",
+      "url": "https://elischein.github.io/RavLuach/",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Windows 10, Windows 11",
+      "softwareVersion": "2.1.0",
+      "inLanguage": "he",
+      "isAccessibleForFree": true,
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "ILS" },
+      "downloadUrl": "https://github.com/elischein/RavLuach/releases/latest/download/RavLuach-Setup.exe",
+      "image": "https://elischein.github.io/RavLuach/images/icon-256.png",
+      "screenshot": "https://elischein.github.io/RavLuach/images/main-window.png",
+      "author": { "@type": "Person", "name": "Eli Schein" },
+      "isPartOf": { "@id": "https://elischein.github.io/RavLuach/#website" }
+    }
+  ]
+}
+</script>
 <style>
   :root {
     --bg: #faf8fc; --surface: #ffffff; --fg: #1d1b20; --muted: #5f5a66; --line: #e6e0ec;
@@ -99,7 +151,7 @@
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#"><img src="images/favicon-64.png" alt="">רב לוח</a>
+    <a class="brand" href="./"><img src="images/favicon-64.png" alt="">רב לוח</a>
     <nav class="links">
       <a href="#features">תכונות</a>
       <a href="#export">יצוא והדפסה</a>
@@ -117,7 +169,7 @@
         <img src="images/icon-256.png" alt="סמל רב לוח">
         <h1>רב לוח</h1>
       </div>
-      <p class="tagline">לוח שנה עברי ולועזי למחשב - חגים, זמני היום, ימי הולדת ויאהרצייט, והדפסת לוחות שנה מעוצבים.</p>
+      <p class="tagline">תוכנת לוח שנה עברי ולועזי למחשב - חגים, זמני היום, ימי הולדת ויאהרצייט, והדפסת לוחות שנה מעוצבים.</p>
       <div class="cta">
         <a class="btn btn-primary" href="https://github.com/elischein/RavLuach/releases/latest/download/RavLuach-Setup.exe">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
@@ -125,7 +177,7 @@
         </a>
         <a class="btn btn-ghost" href="#new">מה חדש בגרסה 2.1</a>
       </div>
-      <p class="meta">חינם לשימוש אישי · גרסה 2.1.0 ·<span class="ltr">Windows 10 / 11</span> (64 ביט) · <a href="https://github.com/elischein/RavLuach/releases">כל הגרסאות</a></p>
+      <p class="meta"><span class="ltr">RavLuach</span> · חינם לשימוש אישי · גרסה 2.1.0 ·<span class="ltr">Windows 10 / 11</span> (64 ביט) · <a href="https://github.com/elischein/RavLuach/releases">כל הגרסאות</a></p>
     </div>
     <img class="shot-main" src="images/main-window.png" width="281" height="441" alt="החלון הראשי של רב לוח - חודש תשרי">
   </div>
